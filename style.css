@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-size: 60px;
+}
+body{
+	min-width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+    perspective: 26em;
+    perspective-origin: 470px 190px;
+    position: relative;
+	
+}
+.cube{
+	
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animate 15s linear infinite;
+
+
+}
+@keyframes animate{
+	to{
+		transform: rotateY(360deg);	}
+}
+.shadow{
+	position: absolute;
+	background-color: white;
+	width: 2em;
+	height: 2em;
+	transform: rotateX(90deg);
+	bottom: 1.5em;
+	left: 11em;
+	box-shadow: 0 0 100px 10px white;
+	filter: blur(100px);
+}
+.top, .bottom, .left, .right, .front, .back{
+	height: 2em;
+	width: 2em;
+	background-color: aqua;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	box-shadow:0 0 30px 10px lightgreen, 0 0 30px 20px blue inset;
+
+
+}
+.front{
+    transform: translateZ(1em) ;
+}
+.back{
+    transform: translateZ(-1em) ;
+}
+.top{
+    transform: translateY(-1em) rotateX(90deg) ;
+}
+.bottom{
+    transform: translateY(1em) rotateX(90deg) ;
+}
+.right{
+    transform: translateX(-1em) rotateY(90deg) ;
+}
+.left{
+    transform: translateX(1em) rotateY(90deg) ;
+}
